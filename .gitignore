@@ -4,6 +4,7 @@
 dev
 package.json
 gulpfile.js
+.eslintrc.js
 
 # Sass
 .sass-cache/
