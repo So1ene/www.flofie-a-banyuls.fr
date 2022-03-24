@@ -1,0 +1,69 @@
+/* Typography */
+
+p {
+    // to-do: use variables instead
+    font-weight: 16px;
+    font-size: 20px;
+    color: $color--body;
+    line-height: 1.5;
+    letter-spacing: normal;
+    margin: 1rem 0;
+
+    @include breakpoint(tablet) {
+    }
+
+    @include breakpoint(laptop) {
+    }
+
+    @include breakpoint(desktop) {
+    }
+}
+
+a {
+}
+
+a.button,
+button
+input[type=button],
+input[type=submit],
+input[type=reset] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-weight: 700;
+    font-style: normal;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    margin: 0;
+    padding: 13px 1.5em 13px 1.5em;
+    border-radius: 27px;
+    transition: background-color .3s, color .3s, border .3s;
+    line-height: 1;
+    font-family: $font--body;
+    font-size: $body--font-size-m;
+    color: $color--white;
+    border: 2px solid $color--gray;
+    background: $color--gray;
+}
+
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}

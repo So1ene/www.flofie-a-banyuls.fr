@@ -1,0 +1,23 @@
+/* Main */
+
+@import "0-normalize";
+@import "1-font-import";
+@import "2-variables";
+@import "3-mixins";
+@import "4-typography";
+
+body {
+    font-family: $font--body;
+    background-color: $color--white;
+    min-width: 320px;
+    min-height: 320px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+main {
+    box-sizing: border-box;
+    min-height: 100vh;
+}
