@@ -4,6 +4,14 @@ function headerAndFooter() {
   const $hamburger = document.getElementById('site-mobile-menu');
   const $pageContent = document.querySelector('main');
   const $footer = document.getElementById('footer');
+  const style = document.createElement('style');
+  style.innerHTML = `
+    @media only screen and (max-width: 800px) {
+      .header.header--inverted {
+        transition: all .3s ease .1s, background-color 0.3s ease-out 0.3s !important;
+      }
+    }
+  `;
 
   // Mobile Menu
   function openMobileMenu() {
@@ -23,6 +31,8 @@ function headerAndFooter() {
     if ($nav) {
       $nav.style.maxHeight = null;
     }
+    $header.appendChild(style);
+    setTimeout(() => {style.remove();}, 300);
   }
   function toggleMobileMenu() {
     if ($header) {

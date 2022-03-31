@@ -4,6 +4,10 @@
 //------------------
 */
 
+@mixin navbar-breakpoint {
+    @media only screen and (max-width: 800px) { @content };
+}
+
 .header {
     position: fixed;
     z-index: 1000;
@@ -15,7 +19,11 @@
     background: #b6d0e1;
     min-width: 320px;
 
-    @include breakpoint(mobile-all) {
+    p, a, span {
+        line-height: 1;
+    }
+
+    @include navbar-breakpoint {
         box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.1);
     }
 
@@ -38,7 +46,7 @@
             box-sizing: border-box;
             transition: all 0.3s;
 
-            @include breakpoint(mobile-all) {
+            @include navbar-breakpoint {
                 padding: 0px;
             }
         }
@@ -54,7 +62,7 @@
         pointer-events: none;
         z-index: 7;
 
-        @include breakpoint(mobile-all) {
+        @include navbar-breakpoint {
             box-shadow: none;
         }
     }
@@ -63,13 +71,17 @@
         margin: 0;
         width: auto;
         display: flex;
-        max-width: 164px;
+        max-width: 144px;
         padding: 0 1em;
         color: #333333;
         transition: color 0.4s;
         justify-content: flex-start;
 
-        @include breakpoint(mobile-all) {
+        @media only screen and (min-width: 1281px) { 
+            max-width: 164px;
+        }
+
+        @include navbar-breakpoint {
             padding: 0 16px;
             height: 40px;
         }
@@ -97,7 +109,7 @@
         font-size: 14px;
         font-family: $font--arimo;
 
-        @include breakpoint(mobile-all) {
+        @include navbar-breakpoint {
             z-index: 2;
             background: #b6d0e1;
             width: 100%;
@@ -118,7 +130,7 @@
             padding: 0;
             margin-left: 40px;
 
-            @include breakpoint(mobile-all) {
+            @include navbar-breakpoint {
                 margin-left: 0;
                 -ms-flex-wrap: wrap;
                 flex-wrap: wrap;
@@ -136,7 +148,7 @@
                 align-items: center;
                 position: relative;
 
-                @include breakpoint(mobile-all) {
+                @include navbar-breakpoint {
                     width: 100%;
                 }
 
@@ -146,7 +158,7 @@
                     transition: color 0.3s;
                     cursor: pointer;
 
-                    @include breakpoint(mobile-all) {
+                    @include navbar-breakpoint {
                         width: 100%;
                         margin: 0;
                         padding: 6px 16px;
@@ -186,7 +198,7 @@
                     margin: 0;
                     margin-left: 20px;
 
-                    @include breakpoint(mobile-all) {
+                    @include navbar-breakpoint {
                         margin-left: 16px;
                         margin-top: 1rem;
                     }
@@ -204,7 +216,7 @@
         border: none;
         background: transparent;
 
-        @include breakpoint(mobile-all) {
+        @include navbar-breakpoint {
             display: block;
         }
 
@@ -260,7 +272,7 @@
 
 
         nav {
-            @include breakpoint(mobile-all) {
+            @include navbar-breakpoint {
                 opacity: 1;
                 transition: max-height 0.3s ease;
             }
@@ -268,41 +280,47 @@
     }
 }
 
-@media only screen and (min-width: 1081px) { 
-    .header.header--inverted:not(.mobile-active):not(.hover) {
-        transition: all 0.3s ease 0.1s;
-        background: transparent;
-        -webkit-box-shadow: none;
+.header.header--inverted:not(.mobile-active) {
+    transition: all 0.3s ease 0.1s;
+    background: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+
+    .header__overlay {
         box-shadow: none;
+    }
 
-        .header__wrapper > .container {
-            padding-top: 3rem;
-        }
+    .header {
+        color: #101f3a;
+    }
 
-        .header__overlay {
-            box-shadow: none;
-        }
+    a.nav {
+        color: #101f3a;
+    }
 
+    .header__hamburger-menu__icon,
+    .header__hamburger-menu__icon::after,
+    .header__hamburger-menu__icon::before {
+        background-color: #101f3a;
+    }
+}
+
+@media only screen and (min-width: 801px) {
+    .header.header--inverted:not(.mobile-active) {
         .header__logo {
             color: #fff;
-
+    
             &-img {
                 filter: drop-shadow(1px 2px rgba(16, 31, 58, 0.8));
             }
         }
+    }
+}
 
-        .header {
-            color: #101f3a;
-        }
-
-        a.nav {
-            color: #101f3a;
-        }
-
-        .header__hamburger-menu__icon,
-        .header__hamburger-menu__icon::after,
-        .header__hamburger-menu__icon::before {
-            background-color: #101f3a;
+@media only screen and (min-width: 1281px) { 
+    .header.header--inverted:not(.mobile-active) {
+        .header__wrapper > .container {
+            padding-top: 3rem;
         }
     }
 }
@@ -313,23 +331,25 @@
 
 .header nav ul {
     transition: opacity 0.2s;
-    @include breakpoint(mobile-all) {
+    @include navbar-breakpoint {
         opacity: 0;
     }
 }
 
 .header.mobile-active nav ul {
-    @include breakpoint(mobile-all) {
+    @include navbar-breakpoint {
         opacity: 1;
     }
 }
 
-.header.header--inverted.hover:not(.mobile-active) {
-    transition: all 0.3s ease 0s;
-    .header__wrapper > .container {
-        padding-top: 3rem;
-        @include breakpoint(mobile-all) {
-            padding: 0;
-        }
+// .header.header--inverted {
+//     @include navbar-breakpoint {
+//         transition: all .3s ease .1s, background-color 0.3s ease-out 0.3s !important;
+//     }
+// }
+
+.header.header--inverted.mobile-active {
+    @include navbar-breakpoint {
+        transition: all .3s ease .1s, background-color 0s ease 0s !important;
     }
 }

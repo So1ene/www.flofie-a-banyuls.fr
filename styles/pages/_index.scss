@@ -8,13 +8,8 @@
     background: #b6d0e1;
     color: #FFF;
 
-    @include breakpoint(tablet) {
-        padding-top: 59px;
-    }
-
     @include breakpoint(mobile-all) {
         overflow: hidden;
-        padding-top: 0;
     }
 
     > div,
