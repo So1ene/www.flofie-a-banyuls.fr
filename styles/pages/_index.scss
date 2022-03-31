@@ -8,8 +8,13 @@
     background: #b6d0e1;
     color: #FFF;
 
-    @include breakpoint(mobile-tablet) {
+    @include breakpoint(tablet) {
         padding-top: 59px;
+    }
+
+    @include breakpoint(mobile-all) {
+        overflow: hidden;
+        padding-top: 0;
     }
 
     > div,
@@ -24,6 +29,10 @@
         width: 100%;
         display: block;
         user-select: none;
+
+        @include breakpoint(mobile-all) {
+            width: 130%;
+        }
     }
 
     &__bienvenue {
@@ -109,6 +118,7 @@
         }
 
         @include breakpoint(mobile-all) {
+            left: 43%;
             filter: drop-shadow(1px 2px rgba(16, 31, 58, 0.6));
         }
     }
@@ -125,8 +135,8 @@
             height: 16%;
             transform: rotate(180deg);
             filter: drop-shadow(-1px -2px rgba(16, 31, 58, 0.8));
-            left: 25%;
-            bottom: 5%;
+            left: 32%;
+            bottom: 7%;
         }
     }
 }
