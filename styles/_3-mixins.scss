@@ -48,4 +48,7 @@
     @if $breakpoint == mobile-XL {
         @media only screen and (min-width: 600px) and (max-width: 700px) { @content }; // Extra large phone, but not large enough to be tablet...
     }
+    @if $breakpoint == laptop-S-M {
+        @media only screen and (min-width: 1081px) and (max-width: 1980px) { @content }; // Commonly 1024px, 1280px, 1366px, 1440px, 1600px/1680px
+    }
 }

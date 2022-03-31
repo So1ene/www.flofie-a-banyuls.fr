@@ -1,0 +1,115 @@
+/* Typography */
+
+p, a {
+    font-family: $font--arimo;
+    font-weight: $font-weight--regular;
+    font-size: 16px;
+    color: #101f3a;
+    line-height: 1.5;
+    letter-spacing: normal;
+    margin: 1rem 0;
+    text-decoration: none;
+}
+
+::selection { background: #6caede; }
+
+a.button,
+.button {
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-transition: background-color 0.2s ease-in, color 0.2s ease-in, border 0.2s ease-in;
+    transition: background-color 0.2s ease-in, color 0.2s ease-in, border 0.2s ease-in;
+    font-weight: $font-weight--bold;
+    letter-spacing: 1px;
+    border: 2px solid transparent;
+    color: $color--white;
+    background-color: $color--charcoal;
+    padding: 16px 36px 15px;
+    font-size: 14px;
+    margin: 1.5rem 0 1.5rem 0;
+    user-select: none;
+
+    @include breakpoint(mobile-all) {
+        font-size: 16px;
+    }
+
+    img {
+        height: 11px;
+        margin: 0 0.5rem;
+
+        @include breakpoint(mobile-all) {
+            height: 12px;
+        }
+    }
+
+    &:hover {
+        background-color: $color--darker-gray;
+    }
+
+    &:active {
+        -webkit-filter: brightness(97%);
+        filter: brightness(97%);
+        user-select: none;
+    }
+
+    &--white {
+        background-color: transparent;
+        border: 2px solid $color--white;
+        color: $color--white;
+
+        &:hover {
+            border: 2px solid $color--red;
+            background-color: $color--red;
+        }
+    }
+
+    &--red {
+        color: $color--white;
+        background-color: $color--red;
+
+        &:hover {
+            background-color: $color--dark-red;
+        }
+    }
+
+    &--small {
+        font-weight: $font-weight--bold;
+        font-size: 12px;
+        padding: 9px 10px 8px 10px;
+        border-radius: 7px;
+    }
+
+    &--secondary {
+        border: 2px solid $color--charcoal;
+        background-color: transparent;
+        color: $color--charcoal;
+
+        &:hover {
+            border: 2px solid $color--darker-gray;
+            background-color: $color--darker-gray;
+            color: $color--white;
+        }
+    }
+
+    &--no-border {
+        padding-left: 0;
+        padding-right: 0;
+        background-color: transparent;
+        border-color: transparent;
+        color: $color--charcoal;
+        transition: opacity 0.3s;
+
+        &:hover {
+            background-color: transparent;
+            border-color: transparent;
+            color: $color--charcoal;
+            opacity: 0.85;
+        }
+    }
+}

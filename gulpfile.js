@@ -7,35 +7,36 @@ const autoprefixer = require('gulp-autoprefixer');
 const linebreak = '------------------------';
     
 gulp.task('Compile CSS', function(cb) {
-  gulp.src(['dev/styles/styles.scss'])
+  gulp.src(['./styles/styles.scss'])
     .pipe(concat('styles.min.scss'))
     .pipe(sass({ 
       outputStyle: 'compressed',
-      includePaths: ['dev/styles/'] 
+      includePaths: ['./styles/'] 
     }).on('error', sass.logError))
     .pipe(autoprefixer())
-    .pipe(gulp.dest('.'));
+    .pipe(gulp.dest('./dist/'));
   cb();
 });
 
 gulp.task('Compile JS', function(cb) {
-  gulp.src(['dev/scripts/*.js'])
+  gulp.src(['./scripts/*.js'])
     .pipe(concat('scripts.min.js'))
     .pipe(uglify())
-    .pipe(gulp.dest('.'));
+    .pipe(gulp.dest('./dist/'));
   cb();
 });
 
 gulp.task('Watch Files', function() {
   browsersync.init({
     server: {
-      baseDir: '.',
+      baseDir: './dist/',
     }
   });
   gulp.watch([
-    'dev/styles/*.scss',
-    'dev/scripts/*.js',
-    '*.html'
+    './styles/*.scss',
+    './styles/*/*.scss',
+    './scripts/*.js',
+    './dist/*.html'
   ]).on('change', gulp.series(`${linebreak}`, browsersync.reload));
 });
 

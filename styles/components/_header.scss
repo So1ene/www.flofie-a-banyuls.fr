@@ -1,0 +1,332 @@
+/*
+//------------------
+//# Header
+//------------------
+*/
+
+.header {
+    position: fixed;
+    z-index: 1000;
+    top: -1px;
+    color: #333333;
+    width: 100%;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    background: #b6d0e1;
+    min-width: 320px;
+
+    @include breakpoint(mobile-all) {
+        box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.1);
+    }
+
+    &__wrapper {
+        position: relative;
+
+        > .container {
+            width: 100%;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            position: relative;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            padding: 16px 1.5rem;
+            box-sizing: border-box;
+            transition: all 0.3s;
+
+            @include breakpoint(mobile-all) {
+                padding: 0px;
+            }
+        }
+    }
+
+    &__overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.2);
+        pointer-events: none;
+        z-index: 7;
+
+        @include breakpoint(mobile-all) {
+            box-shadow: none;
+        }
+    }
+
+    &__logo {
+        margin: 0;
+        height: 50px;
+        padding: 0 2rem;
+        color: #333333;
+        transition: color 0.4s;
+
+        @include breakpoint(mobile-all) {
+            padding: 0 16px;
+            height: 40px;
+        }
+
+        &-img {
+            height: 100%;
+            width: auto;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border-radius: 4px;
+            filter: drop-shadow(1px 2px rgba(255, 255, 255, 0.8));
+            transition: filter 0.4s;
+        }
+    }
+
+    a.nav {
+        font-weight: $font-weight--bold;
+        text-transform: uppercase;
+        font-size: 14px;
+    }
+    
+    nav {
+        font-weight: $font-weight--bold;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-family: $font--arimo;
+
+        @include breakpoint(mobile-all) {
+            z-index: 2;
+            background: #b6d0e1;
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 60px;
+            box-shadow: 0 8px 4px -4px rgba(0, 0, 0, 0.2);
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s;
+        }
+
+        ul {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            margin-left: 40px;
+
+            @include breakpoint(mobile-all) {
+                margin-left: 0;
+                -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+                padding-bottom: 30px;
+                padding-top: 16px;
+            }
+
+            li {
+                list-style-type: none;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                position: relative;
+
+                @include breakpoint(mobile-all) {
+                    width: 100%;
+                }
+
+                a.nav {
+                    margin: 0 16px;
+                    color: #333333;
+                    transition: color 0.3s;
+                    cursor: pointer;
+
+                    @include breakpoint(mobile-all) {
+                        width: 100%;
+                        margin: 0;
+                        padding: 6px 16px;
+                    }
+
+                    span {
+                        position: relative;
+                        white-space: nowrap;
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 3px;
+                            left: 0;
+                            height: 2px;
+                            width: 100%;
+                            background-color: $color--red;
+                            opacity: 0;
+                            -webkit-transition: 0.3s all ease-in;
+                            transition: 0.3s all ease-in;
+                        }
+
+                        svg {
+                            margin-left: 2px;
+                        }
+                    }
+
+                    &:hover {
+                        span::after {
+                            opacity: 1;
+                            bottom: -4px;
+                        }
+                    }
+                }
+
+                .button {
+                    margin: 0;
+                    margin-left: 20px;
+
+                    @include breakpoint(mobile-all) {
+                        margin-left: 16px;
+                        margin-top: 1rem;
+                    }
+                }
+            }
+        }
+    }
+
+    &__hamburger-menu {
+        display: none;
+        position: relative;
+        width: 80px;
+        height: 60px;
+        cursor: pointer;
+        border: none;
+        background: transparent;
+
+        @include breakpoint(mobile-all) {
+            display: block;
+        }
+
+        &__icon {
+            position: absolute;
+            top: 50%;
+            right: 32px;
+            margin: 0 0 1rem;
+
+            &::before {
+                top: -6px;
+            }
+
+            &::after {
+                top: 6px;
+            }
+        }
+
+        .header__hamburger-menu__icon::after,
+        .header__hamburger-menu__icon::before {
+            content: "";
+            position: absolute;
+            left: 0;
+        }
+
+        .header__hamburger-menu__icon,
+        .header__hamburger-menu__icon::after,
+        .header__hamburger-menu__icon::before {
+            height: 2px;
+            width: 20px;
+            background-color: #333333;
+            display: inline-block;
+            -webkit-transition: all .2s;
+            transition: all .2s;
+        }
+    }
+
+    &.mobile-active {
+
+        .header__hamburger-menu__icon {
+            &::before {
+                top: 0;
+                -webkit-transform: rotate(135deg);
+                transform: rotate(135deg);
+            }
+
+            &::after {
+                top: 0;
+                -webkit-transform: rotate(-135deg);
+                transform: rotate(-135deg);
+            }
+        }
+
+
+        nav {
+            @include breakpoint(mobile-all) {
+                opacity: 1;
+                transition: max-height 0.3s ease;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1081px) { 
+    .header.header--inverted:not(.mobile-active):not(.hover) {
+        transition: all 0.3s ease 0.1s;
+        background: transparent;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+
+        .header__wrapper > .container {
+            padding-top: 3rem;
+        }
+
+        .header__overlay {
+            box-shadow: none;
+        }
+
+        .header__logo {
+            color: #fff;
+
+            &-img {
+                filter: drop-shadow(1px 2px rgba(16, 31, 58, 0.8));
+            }
+        }
+
+        .header {
+            color: #101f3a;
+        }
+
+        a.nav {
+            color: #101f3a;
+        }
+
+        .header__hamburger-menu__icon,
+        .header__hamburger-menu__icon::after,
+        .header__hamburger-menu__icon::before {
+            background-color: #101f3a;
+        }
+    }
+}
+
+.header.mobile-active .header__hamburger-menu__icon {
+    background-color: transparent !important;
+}
+
+.header nav ul {
+    transition: opacity 0.2s;
+    @include breakpoint(mobile-all) {
+        opacity: 0;
+    }
+}
+
+.header.mobile-active nav ul {
+    @include breakpoint(mobile-all) {
+        opacity: 1;
+    }
+}
+
+.header.header--inverted.hover:not(.mobile-active) {
+    transition: all 0.3s ease 0s;
+    .header__wrapper > .container {
+        padding-top: 3rem;
+        @include breakpoint(mobile-all) {
+            padding: 0;
+        }
+    }
+}

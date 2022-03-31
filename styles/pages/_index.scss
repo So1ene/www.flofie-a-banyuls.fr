@@ -1,0 +1,132 @@
+/*
+//------------------
+//# Home Page
+//------------------
+*/
+
+.hero {
+    background: #b6d0e1;
+    color: #FFF;
+
+    @include breakpoint(mobile-tablet) {
+        padding-top: 59px;
+    }
+
+    > div,
+    > div > div:first-child {
+        position: relative;
+        height: 100%;
+        width: 100%;
+    }
+
+    &__background-img {
+        height: auto;
+        width: 100%;
+        display: block;
+        user-select: none;
+    }
+
+    &__bienvenue {
+        position: absolute;
+        top: 32%;
+        right: 15%;
+        transition: right .3s, top .3s;
+        text-shadow: 2px 3px rgba(16, 31, 58, 0.8);
+
+        @media only screen and (max-width: 1450px) {
+            right: 8%;
+        }
+
+        @include breakpoint(tablet) {
+            right: 5%;
+        }
+
+        @include breakpoint(mobile-all) {
+            position: static;
+            bottom: auto;
+            right: auto;
+            background: #1d4580;
+            padding: 10px 16px;
+            border-top: 5px solid #fff;
+            box-sizing: content-box;
+            box-shadow: inset 0 8px 4px -4px rgba(0,0,0,0.2);
+        }
+
+        h1 {
+            font-family: $font--lobster;
+            font-size: 56px;
+            font-weight: 400;
+            margin: 0;
+
+
+            @media only screen and (max-width: 1450px) {
+                font-size: 40px;
+            }
+
+            @include breakpoint(mobile-all) {
+                font-size: 38px;
+            }
+        }
+
+        &--subtitle {
+            display: block;
+            font-family: $font--arimo;
+            font-style: italic;
+            font-size: 18px;
+            font-weight: 700;
+
+
+            @media only screen and (max-width: 1250px) {
+                font-size: 16px;
+            }
+        }
+
+        &--space {
+            padding: 0 2px;
+        }
+    }
+
+    &__circle {
+        position: absolute;
+        bottom: 22.5%;
+        left: 33%;
+        height: 10%;
+        filter: drop-shadow(2px 3px rgba(16, 31, 58, 0.6));
+        pointer-events: none;
+
+        path {
+            stroke-dasharray: 2000;
+            stroke-dashoffset: 2000;
+            animation: dash 5s linear alternate infinite;
+        }
+        @keyframes dash {
+          from {
+            stroke-dashoffset: 0;
+          }
+          to {
+            stroke-dashoffset: 10000;
+          }
+        }
+
+        @include breakpoint(mobile-all) {
+            filter: drop-shadow(1px 2px rgba(16, 31, 58, 0.6));
+        }
+    }
+
+    &__arrow {
+        position: absolute;
+        bottom: 28.5%;
+        left: 36.5%;
+        height: 7%;
+        filter: drop-shadow(2px 3px rgba(16, 31, 58, 0.8));
+        pointer-events: none;
+
+        @include breakpoint(mobile-all) {
+            height: 16%;
+            transform: rotate(180deg);
+            filter: drop-shadow(-1px -2px rgba(16, 31, 58, 0.8));
+            left: 25%;
+            bottom: 5%;
+        }
+    }
+}

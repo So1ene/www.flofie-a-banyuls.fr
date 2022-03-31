@@ -1,0 +1,56 @@
+/* Main */
+
+@import "0-normalize";
+@import "1-font-import";
+@import "2-variables";
+@import "3-mixins";
+@import "4-typography";
+
+@import "components/header";
+@import "components/footer";
+
+@import "pages/index";
+
+/*
+//------------------
+//# Elements
+//------------------
+*/
+
+body {
+    min-width: 320px;
+    min-height: 320px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gutter {
+    width: 100%;
+    padding: 0 1.5rem;
+
+    @include breakpoint(mobile-all) {
+        max-width: 320px;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    @include breakpoint(mobile-S) {
+        max-width: 316px;
+    }
+
+    @include breakpoint(mobile-L) {
+        max-width: 375px;
+    }
+
+    @include breakpoint(mobile-XL) {
+        max-width: 500px;
+    }
+}
