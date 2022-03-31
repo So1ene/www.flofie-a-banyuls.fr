@@ -5,13 +5,7 @@ function headerAndFooter() {
   const $pageContent = document.querySelector('main');
   const $footer = document.getElementById('footer');
   const style = document.createElement('style');
-  style.innerHTML = `
-    @media only screen and (max-width: 800px) {
-      .header.header--inverted {
-        transition: all .3s ease .1s, background-color 0.3s ease-out 0.3s !important;
-      }
-    }
-  `;
+  style.innerHTML = '@media only screen and (max-width: 800px) { .header.header--inverted { transition: all .3s ease .1s, background-color 0.3s ease-out 0.3s !important; }}';
 
   // Mobile Menu
   function openMobileMenu() {

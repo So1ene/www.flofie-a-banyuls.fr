@@ -20,15 +20,10 @@
 body {
     min-width: 320px;
     min-height: 320px;
-    background: #b6d0e1;
 }
 
 body.stop-transitions * {
     transition: none !important;
-}
-  
-main {
-    background: #fff;
 }
 
 html {
