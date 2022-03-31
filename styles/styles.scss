@@ -23,6 +23,10 @@ body {
     background: #b6d0e1;
 }
 
+body.stop-transitions * {
+    transition: none !important;
+}
+  
 main {
     background: #fff;
 }

@@ -77,8 +77,14 @@
         <section class="hero">
             <div>
                 <div>
-                    <img class="hero__background-img" src="assets/images/banyuls-sur-mer.jpg" width="2000" height="1125"
+                    <picture>
+                        <source srcset="assets/images/banyuls-sur-mer--small.webp" type="image/webp" media="(max-width: 900px)">
+                        <source srcset="assets/images/banyuls-sur-mer--small.jpg" type="image/jpeg" media="(max-width: 900px)">
+                        <source srcset="assets/images/banyuls-sur-mer.webp" type="image/webp">
+                        <source srcset="assets/images/banyuls-sur-mer.jpg" type="image/jpeg"> 
+                        <img class="hero__background-img" src="assets/images/banyuls-sur-mer.jpg" width="2000" height="1125"
                         alt="l'horizon de Banyuls-sur-Mer avec la maison 'Chez Flofie' au bord de l'océan">
+                    </picture>
                     <svg class="hero__circle" viewBox="0 0 257.785 244.671" xmlns="http://www.w3.org/2000/svg">
                         <path style="fill: none; stroke-width: 11px; stroke-linecap: round; stroke: rgb(255, 255, 255);"
                             d="M 58.173 17.699 C 36.314 39.558 19.603 75.315 19.603 107.18 C 19.603 126.38 20.629 143.166 25.774 161.177 C 39.339 208.651 94.365 248.997 144.568 240.629 C 166.905 236.907 185.239 226.325 203.193 212.86 C 251.845 176.37 253.689 79.765 210.907 36.984 C 190.369 16.445 169.094 9.953 142.254 4.585 C 135.411 3.217 124.677 2.392 117.569 3.814 C 72.938 12.74 35.468 49.121 25.003 90.98 C 20.744 108.018 25.686 127.655 30.403 146.52 C 32.845 156.289 38.873 166.533 41.973 175.833 C 45.862 187.498 54.381 196.725 62.801 205.146 C 88.588 230.933 138.765 250.436 173.109 229.83 C 198.675 214.49 212.607 192.017 218.621 161.948 C 229.398 108.064 222.658 43.789 175.423 12.299 C 166.536 6.375 152.804 6.9 142.254 6.9 C 110.795 6.9 71.013 23.123 51.23 47.783 C 11.093 97.816 17.29 171.204 17.29 171.204"
