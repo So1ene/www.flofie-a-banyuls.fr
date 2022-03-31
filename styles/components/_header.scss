@@ -61,10 +61,13 @@
 
     &__logo {
         margin: 0;
-        height: 50px;
-        padding: 0 2rem;
+        width: auto;
+        display: flex;
+        max-width: 164px;
+        padding: 0 1em;
         color: #333333;
         transition: color 0.4s;
+        justify-content: flex-start;
 
         @include breakpoint(mobile-all) {
             padding: 0 16px;
@@ -72,8 +75,8 @@
         }
 
         &-img {
-            height: 100%;
-            width: auto;
+            width: 100%;
+            height: auto;
             -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
             border-radius: 4px;
