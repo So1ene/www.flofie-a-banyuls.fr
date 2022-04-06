@@ -26,7 +26,7 @@
         user-select: none;
 
         @include breakpoint(mobile-all) {
-            width: 130%;
+            width: 160%;
         }
     }
 
@@ -113,7 +113,7 @@
         }
 
         @include breakpoint(mobile-all) {
-            left: 43%;
+            left: 53%;
             filter: drop-shadow(1px 2px rgba(16, 31, 58, 0.6));
         }
     }
@@ -127,11 +127,117 @@
         pointer-events: none;
 
         @include breakpoint(mobile-all) {
-            height: 16%;
+            height: 12%;
             transform: rotate(180deg);
             filter: drop-shadow(-1px -2px rgba(16, 31, 58, 0.8));
-            left: 32%;
-            bottom: 7%;
+            left: 44%;
+            bottom: 10%;
         }
+    }
+}
+
+.polaroid-gallery {
+    padding: 32px;
+    background: url('/assets/images/Sand_with_Beach_Background.jpg');
+    border-top: 5px solid white;
+    box-shadow: inset 0 8px 4px -4px rgba(0,0,0,0.2);
+    background-size: cover;
+}
+
+.polaroid-card {
+    display: inline-block;
+    background-color: #f7f3ec;
+    padding: 10px;
+    box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.7);
+    margin: 16px;
+}
+
+.polaroid-card img {
+    height: 300px;
+    width: 300px;
+    object-fit: cover;
+    filter: brightness(1.25)
+}
+
+.polaroid-card-caption {
+    text-align: center;
+    font-family: $font--marker-felt;
+    font-weight: 500;
+    font-size: 15px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.polaroid-card:first-of-type {
+    margin-left: 10vw;
+}
+
+.polaroid-card:nth-of-type(even) {
+    transform: rotate(8deg) translateY(-180px);
+}
+
+.polaroid-card:nth-of-type(odd) {
+    transform: rotate(-8deg) translateY(-180px);
+}
+
+.polaroid-card:nth-of-type(even):hover {
+    transform: scale(1.2) translate(30px, -140px);
+}
+
+.polaroid-card:nth-of-type(odd):hover {
+    transform: scale(1.2) translate(-30px, -140px);
+}
+
+
+@media only screen and (max-width: 1280px) { 
+    .polaroid-card:nth-of-type(even) {
+        transform: rotate(8deg) translateY(-80px);
+    }
+    
+    .polaroid-card:nth-of-type(odd) {
+        transform: rotate(-8deg) translateY(-80px);
+    }
+    
+    .polaroid-card:nth-of-type(even):hover {
+        transform: scale(1.2) translate(30px, -40px);
+    }
+    
+    .polaroid-card:nth-of-type(odd):hover {
+        transform: scale(1.2) translate(-30px, -40px);
+    }
+
+    .polaroid-card:first-of-type {
+        margin-left: 2rem;
+        margin-right: 4rem;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .polaroid-card img {
+        height: 200px;
+        width: 200px;
+    }
+}
+
+
+@media only screen and (max-width: 800px) { 
+    .polaroid-card img {
+        height: 70vw;
+        width: 70vw;
+    }
+
+    .polaroid-card {
+        box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.5);
+    }
+
+    .polaroid-card:nth-of-type(even),
+    .polaroid-card:nth-of-type(even):hover {
+        transform: rotate(3deg) translate(-20px, -60px);
+    }
+    
+    .polaroid-card:nth-of-type(odd),
+    .polaroid-card:nth-of-type(odd):hover {
+        transform: rotate(-8deg) translateY(-40px);
     }
 }
