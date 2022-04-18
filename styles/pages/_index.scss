@@ -414,7 +414,8 @@
 
     @include breakpoint(mobile-tablet) {
         height: 50vw;
-        width: 90vw;
+        width: 100%;
+        max-width: 920px;
         margin: 0 auto;
     }
 
@@ -523,6 +524,11 @@
     .text {
         grid-column: 1;
         grid-row: 1;
+        padding: 0 3rem 0 2rem;
+
+        @include breakpoint(mobile-all) {
+            padding: 0;
+        }
 
         h2 {
             font-family: $font--lobster;
@@ -573,6 +579,11 @@
     .text {
         grid-column: 2;
         grid-row: 1;
+        padding: 0 2rem 0 3rem;
+
+        @include breakpoint(mobile-all) {
+            padding: 0;
+        }
 
         h2 {
             font-family: $font--lobster;
