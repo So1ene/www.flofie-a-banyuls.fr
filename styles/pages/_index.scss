@@ -242,6 +242,12 @@
                 padding: 4px;
                 line-height: 1;
                 font-size: 12px;
+                display: flex;
+                text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+
+                svg {
+                    filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.4));
+                }
             }
         }
         
