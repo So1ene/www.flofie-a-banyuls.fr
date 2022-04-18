@@ -403,23 +403,23 @@
         margin: 0 auto;
     }
 
-    .carousel-cell {
-        width: 100%;
-        height: 30vw;
-        background: #333;
-
-        @include breakpoint(mobile-tablet) {
-            height: 50vw;
-        }
-
-        img {
-            height: 100%;
-            width: auto;
-            margin: 0 auto;
-        }
-    }
-
     &__main {
+        .carousel-cell {
+            width: 100%;
+            height: 30vw;
+            background: #333;
+    
+            @include breakpoint(mobile-tablet) {
+                height: 50vw;
+            }
+    
+            img {
+                height: 100%;
+                width: auto;
+                margin: 0 auto;
+            }
+        }
+
         .flickity-button {
             color: #fff;
             height: 100%;
@@ -443,6 +443,11 @@
 
     &__nav {
         padding-top: 6px;
+        
+        .carousel-cell {
+            padding-right: 6px;
+            box-sizing: border-box;
+        }
 
         .flickity-viewport {
             cursor: default;
@@ -450,8 +455,14 @@
 
         img {
             max-height: 50px;
-            margin-right: 6px;
             cursor: pointer;
+            box-sizing: border-box;
+            z-index: -1;
+        }
+
+        .is-nav-selected img {
+            outline: 4px solid #d86e41;
+            outline-offset: -4px;
         }
     }
 }
