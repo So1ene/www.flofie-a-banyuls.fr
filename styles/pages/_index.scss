@@ -400,7 +400,6 @@
 .photos {
     height: 30vw;
     width: 60vw;
-    background: #333;
     max-width: 900px;
 
     @media only screen and (max-width: 1600px) {
@@ -514,6 +513,10 @@
         @include breakpoint(mobile-tablet) {
             display: block;
         }
+        
+        @include breakpoint(tablet) {
+            padding: 0 3rem;
+        }
     }
 
     .photos {
@@ -526,7 +529,7 @@
         grid-row: 1;
         padding: 0 3rem 0 2rem;
 
-        @include breakpoint(mobile-all) {
+        @include breakpoint(mobile-tablet) {
             padding: 0;
         }
 
@@ -569,6 +572,10 @@
         @include breakpoint(mobile-tablet) {
             display: block;
         }
+        
+        @include breakpoint(tablet) {
+            padding: 0 3rem;
+        }
     }
 
     .photos {
@@ -581,7 +588,7 @@
         grid-row: 1;
         padding: 0 2rem 0 3rem;
 
-        @include breakpoint(mobile-all) {
+        @include breakpoint(mobile-tablet) {
             padding: 0;
         }
 
