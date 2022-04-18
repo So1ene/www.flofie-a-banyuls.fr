@@ -461,15 +461,15 @@
 }
 
 .l-oblade {
-    padding: 8rem 1rem 4rem;
+    padding: 6rem 1rem 7rem;
     text-align: center;
 
     @include breakpoint(tablet) {
-        padding: 6rem 1rem 3rem;
+        padding: 4rem 1rem 7rem;
     }
 
     @include breakpoint(mobile-all) {
-        padding: 4rem 1rem 2rem;
+        padding: 3rem 1rem 7rem;
     }
 
     .container {
@@ -503,15 +503,15 @@
 }
 
 .la-girelle {
-    padding: 4rem 1rem 8rem;
+    padding: 3rem 1rem 10rem;
     text-align: center;
 
     @include breakpoint(tablet) {
-        padding: 3rem 1rem 6rem;
+        padding: 1.5rem 1rem 10rem;
     }
 
     @include breakpoint(mobile-all) {
-        padding: 2rem 1rem 4rem;
+        padding: 0.5rem 1rem 10rem;
     }
 
     .container {
