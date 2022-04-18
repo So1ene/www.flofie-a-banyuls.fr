@@ -12,8 +12,8 @@
         overflow: hidden;
     }
 
-    > div,
-    > div > div:first-child {
+    >div,
+    >div>div:first-child {
         position: relative;
         height: 100%;
         width: 100%;
@@ -53,7 +53,7 @@
             padding: 10px 16px;
             border-top: 5px solid #fff;
             box-sizing: content-box;
-            box-shadow: inset 0 8px 4px -4px rgba(0,0,0,0.2);
+            box-shadow: inset 0 8px 4px -4px rgba(0, 0, 0, 0.2);
         }
 
         h1 {
@@ -61,7 +61,6 @@
             font-size: 56px;
             font-weight: 400;
             margin: 0;
-
 
             @media only screen and (max-width: 1450px) {
                 font-size: 40px;
@@ -78,7 +77,6 @@
             font-style: italic;
             font-size: 18px;
             font-weight: 700;
-
 
             @media only screen and (max-width: 1250px) {
                 font-size: 16px;
@@ -103,13 +101,14 @@
             stroke-dashoffset: 2000;
             animation: dash 5s linear alternate infinite;
         }
+
         @keyframes dash {
-          from {
-            stroke-dashoffset: 0;
-          }
-          to {
-            stroke-dashoffset: 10000;
-          }
+            from {
+                stroke-dashoffset: 0;
+            }
+            to {
+                stroke-dashoffset: 10000;
+            }
         }
 
         @include breakpoint(mobile-all) {
@@ -136,108 +135,179 @@
     }
 }
 
-.polaroid-gallery {
+.polaroid {
     padding: 32px;
+    padding-bottom: 0;
+    padding-top: 0;
     background: url('/assets/images/Sand_with_Beach_Background.jpg');
     border-top: 5px solid white;
-    box-shadow: inset 0 8px 4px -4px rgba(0,0,0,0.2);
+    box-shadow: inset 0 8px 4px -4px rgba(0, 0, 0, 0.2);
     background-size: cover;
-}
-
-.polaroid-card {
-    display: inline-block;
-    background-color: #f7f3ec;
-    padding: 10px;
-    box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.7);
-    margin: 16px;
-}
-
-.polaroid-card img {
-    height: 300px;
-    width: 300px;
-    object-fit: cover;
-    filter: brightness(1.25)
-}
-
-.polaroid-card-caption {
-    text-align: center;
-    font-family: $font--marker-felt;
-    font-weight: 500;
-    font-size: 15px;
-    margin-top: 8px;
-    margin-bottom: 8px;
-    letter-spacing: 2px;
-}
-
-.polaroid-card:first-of-type {
-    margin-left: 10vw;
-}
-
-.polaroid-card:nth-of-type(even) {
-    transform: rotate(8deg) translateY(-180px);
-}
-
-.polaroid-card:nth-of-type(odd) {
-    transform: rotate(-8deg) translateY(-180px);
-}
-
-.polaroid-card:nth-of-type(even):hover {
-    transform: scale(1.2) translate(30px, -140px);
-}
-
-.polaroid-card:nth-of-type(odd):hover {
-    transform: scale(1.2) translate(-30px, -140px);
-}
-
-
-@media only screen and (max-width: 1280px) { 
-    .polaroid-card:nth-of-type(even) {
-        transform: rotate(8deg) translateY(-80px);
-    }
-    
-    .polaroid-card:nth-of-type(odd) {
-        transform: rotate(-8deg) translateY(-80px);
-    }
-    
-    .polaroid-card:nth-of-type(even):hover {
-        transform: scale(1.2) translate(30px, -40px);
-    }
-    
-    .polaroid-card:nth-of-type(odd):hover {
-        transform: scale(1.2) translate(-30px, -40px);
+    position: relative;
+        
+    @media only screen and (max-width: 1180px) {
+        padding-bottom: 32px;
     }
 
-    .polaroid-card:first-of-type {
-        margin-left: 2rem;
-        margin-right: 4rem;
+    &__card {
+        position: relative;
+        display: inline-block;
+        background-color: #f7f3ec;
+        padding: 10px;
+        box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.7);
+        margin: 16px;
+
+        &:first-of-type {
+            margin-left: 10vw;
+        }
+
+        &:nth-of-type(even) {
+            transform: rotate(8deg) translateY(-150px);
+            
+            &:hover {
+                transform: scale(1.2) translate(30px, -110px);
+            }
+        }
+
+        &:nth-of-type(odd) {
+            transform: rotate(-8deg) translateY(-150px);
+
+            &:hover {
+                transform: scale(1.2) translate(-30px, -110px);
+            }
+        }
+
+        img {
+            height: 300px;
+            width: 300px;
+            object-fit: cover;
+            filter: brightness(1.25)
+        }
+
+        .tag {
+            background: #d86e41;
+            color: white;
+            position: absolute;
+            right: 0;
+            bottom: 4rem;
+            padding: 2px 5px
+        }
+    }
+
+    &__caption {
+        text-align: center;
+        font-family: $font--marker-felt;
+        font-weight: 500;
+        font-size: 15px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        letter-spacing: 2px;
+    }
+
+    &__webcam {
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 15%;
+
+        @media only screen and (max-width: 1450px) {
+            right: 7%;
+        }
+
+        @media only screen and (max-width: 1280px) {
+            right: 3rem;
+        }
+
+        @media only screen and (max-width: 1180px) {
+            right: 2rem;
+            bottom: 1rem;
+            top: auto;
+            transform: none;
+        }
+
+        a {
+            font-weight: bold;
+            text-decoration: underline;
+            color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                color: #464646;
+
+                img {
+                    filter: brightness(1.03);
+                }
+            }
+        }
+
+        img {
+            height: 50px;
+            width: 50px;
+            margin-right: 1rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 1280px) {
+    .polaroid__card {
+        &:nth-of-type(even) {
+            transform: rotate(8deg) translateY(-80px);
+        }
+        &:nth-of-type(odd) {
+            transform: rotate(-8deg) translateY(-80px);
+        }
+        &:nth-of-type(even):hover {
+            transform: scale(1.2) translate(30px, -65px);
+        }
+        &:nth-of-type(odd):hover {
+            transform: scale(1.2) translate(0, -65px);
+        }
+        &:first-of-type {
+            margin-left: 2rem;
+            margin-right: 4rem;
+        }
     }
 }
 
 @media only screen and (max-width: 900px) {
-    .polaroid-card img {
+    .polaroid__card img {
         height: 200px;
         width: 200px;
     }
 }
 
-
-@media only screen and (max-width: 800px) { 
-    .polaroid-card img {
+@media only screen and (max-width: 800px) {
+    .polaroid {
+        padding-bottom: 8rem;
+    }
+    .polaroid__card img {
         height: 70vw;
         width: 70vw;
     }
-
-    .polaroid-card {
+    .polaroid__card {
         box-shadow: 3px 3px 6px 1px rgba(0, 0, 0, 0.5);
+        margin: 0 !important;
     }
+    .polaroid__card:nth-of-type(odd),
+    .polaroid__card:nth-of-type(odd):hover {
+        transform: rotate(-8deg) translate(30px, 10px);
+    }
+    .polaroid__card:nth-of-type(even),
+    .polaroid__card:nth-of-type(even):hover {
+        transform: rotate(3deg) translate(0, 10px);
+    }
+}
 
-    .polaroid-card:nth-of-type(even),
-    .polaroid-card:nth-of-type(even):hover {
-        transform: rotate(3deg) translate(-20px, -60px);
+@media only screen and (max-width: 420px) {
+    .polaroid__card:nth-of-type(odd),
+    .polaroid__card:nth-of-type(odd):hover {
+        transform: rotate(-8deg) translate(15px, 10px);
     }
-    
-    .polaroid-card:nth-of-type(odd),
-    .polaroid-card:nth-of-type(odd):hover {
-        transform: rotate(-8deg) translateY(-40px);
+    .polaroid__card:nth-of-type(even),
+    .polaroid__card:nth-of-type(even):hover {
+        transform: rotate(3deg) translate(-15px, 10px);
     }
 }
