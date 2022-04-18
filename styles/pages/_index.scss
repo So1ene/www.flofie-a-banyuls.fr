@@ -177,7 +177,9 @@
             height: 300px;
             width: 300px;
             object-fit: cover;
-            filter: brightness(1.25)
+            filter: brightness(1.25);
+            max-width: 340px;
+            max-height: 340px;
         }
 
         .tag {
@@ -317,5 +319,12 @@
     .polaroid__card:nth-of-type(even),
     .polaroid__card:nth-of-type(even):hover {
         transform: rotate(3deg) translate(-15px, 10px);
+    }
+}
+
+
+@media only screen and (min-width: 520px) and (max-width: 800px) {
+    .polaroid__cards {
+        text-align: center;
     }
 }
