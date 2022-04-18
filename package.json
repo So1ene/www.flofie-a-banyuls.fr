@@ -29,5 +29,8 @@
     "gulp-sass": "^5.1.0",
     "gulp-uglify": "^3.0.2",
     "sass": "^1.49.9"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^4.0.26"
   }
 }

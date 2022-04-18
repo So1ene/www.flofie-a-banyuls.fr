@@ -11,6 +11,15 @@
     timer = setTimeout(() => {
       document.body.classList.remove('stop-transitions');
       timer = null;
-    }, 100);
+    }, 500);
   });
+})();
+
+
+// Set webcam time
+(function() { 
+  $time = document.querySelector('.time');
+  if ($time) {
+    $time.innerHTML = new Date(new Date()).toLocaleString('fr-FR', {timeZone: 'Europe/Paris', hour: '2-digit', minute:'2-digit' });
+  }
 })();
