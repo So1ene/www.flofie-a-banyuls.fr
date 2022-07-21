@@ -7,64 +7,32 @@
 
 // === Fonts ===
 
-$font--lobster: "Lobster", serif;
-$font--arimo: "Arimo", sans-serif;
-$font--marker-felt: "Marker Felt", sans-serif;
-
-
-// === Colors ===
-
-$color--red: #d86e41;
-$color--brick-red: #C35528;
-$color--orange: #ED6B52;
-$color--blue: #1FC3F3;
-$color--baby-blue: #BBEDFC;
-$color--heavy-baby-blue: #64CBEE;
-$color--sea-green: #7CCEDA;
-$color--vintage-blue: #3D84C3;
-$color--cobalt-blue: #507CBD;
-$color--royal-blue: #1186CD;
-$color--denim-blue: #4377A3;
-$color--egypt-blue: #5A7BB8;
-$color--magenta: #E34B9A;
-$color--charcoal: #404041;
-$color--dark-gray: #8A8A8A;
-$color--darkerish-gray: #585858;
-$color--medium-gray: #EFEFEF;
-$color--light-gray: #FAFAFA;
-$color--lighter-gray: #F5F6F7;
-$color--green: #6DD16D;
-$color--light-green: #D0f1D0;
-$color--pink: #F3DCDC;
-$color--body: rgb(32,32,32);
-$color--gray: rgb(200,200,200);
-
-$gradient-blue-webkit: transparent -webkit-gradient(linear, left top, left bottom, from($color--blue), color-stop(100%, rgba(124, 206, 218, 0.702)), to(rgba(125, 205, 217, 0.502))) 0% 0% no-repeat padding-box;
-$gradient-blue: transparent linear-gradient(180deg, $color--blue 0%, rgba(124, 206, 218, 0.702) 100%, rgba(125, 205, 217, 0.502) 100%) 0% 0% no-repeat padding-box;
-
-$color--white: #FFF;
-$color--black: #000;
-$color--lightbg: #fbfbfb;
-$color--off-white: #F5F2FA;
-$color--footer-gray: #C6C9CB;
-$color--darker-gray: #2D2D2D;
-$color--night: #2C3741;
-$color--light-pink: #f5f2fa;
-$color--dark-red: #C35528;
-
-$input--active: #F05F5D;
-$input--active-inner: $color--white;
-$input--focus: 2px rgba(222, 81, 79, 0.3);
-$input--border: #ec8282;
-$input--border-hover: #F05F5D;
-$input--background: $color--white;
-$input--disabled: #faf9f9;
-$input--disabled-inner: #f0e7e7;
-
-// === Misc ===
+$font--lobster: "lobster", sans-serif;
+$font--fira-sans: "fira-sans", sans-serif;
+$font--permanent-marker: "permanent-marker", sans-serif;
 
 $font-weight--light: 300;
 $font-weight--regular: 400;
 $font-weight--medium: 500;
 $font-weight--semi-bold: 600;
 $font-weight--bold: 700;
+
+
+// === Colors ===
+
+$color--orange: #d86e41;
+$color--dark-orange: #C35528;
+$color--red: #F05F5D;
+$color--light-red: #ec8282;
+$color--blue: #1FC3F3;
+$color--green: #6DD16D;
+$color--light-green: #D0f1D0;
+$color--pink: #F3DCDC;
+$color--dark: #202020;
+$color--dark-gray: #2D2D2D;
+$color--charcoal: #404041;
+$color--gray: #c8c8c8;
+$color--light-gray: #fbfbfb;
+$color--medium-light-gray: #F5F2FA;
+$color--white: #FFF;
+$color--black: #000;

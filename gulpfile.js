@@ -6,7 +6,7 @@ const uglify = require('gulp-uglify');
 const autoprefixer = require('gulp-autoprefixer');
 const linebreak = '------------------------';
     
-gulp.task('Compile CSS', function(cb) {
+gulp.task('Compile CSS', async () => {
   gulp.src(['./styles/styles.scss'])
     .pipe(concat('styles.min.scss'))
     .pipe(sass({ 
@@ -15,15 +15,13 @@ gulp.task('Compile CSS', function(cb) {
     }).on('error', sass.logError))
     .pipe(autoprefixer())
     .pipe(gulp.dest('./dist/'));
-  cb();
 });
 
-gulp.task('Compile JS', function(cb) {
+gulp.task('Compile JS', async () => {
   gulp.src(['./scripts/*.js'])
     .pipe(concat('scripts.min.js'))
     .pipe(uglify())
     .pipe(gulp.dest('./dist/'));
-  cb();
 });
 
 gulp.task('Watch Files', function() {
