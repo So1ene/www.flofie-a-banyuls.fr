@@ -3,6 +3,7 @@ function headerAndFooter() {
   const $nav = document.getElementById('site-primary-navigation');
   const $hamburger = document.getElementById('site-mobile-menu');
   const $pageContent = document.querySelector('main');
+  const $fullHeight = document.getElementById('full-height');
   const $footer = document.getElementById('footer');
   const style = document.createElement('style');
   style.innerHTML = '@media only screen and (max-width: 800px) { .header.header--inverted { transition: all .3s ease .1s, background-color 0.3s ease-out 0.3s !important; }}';
@@ -85,8 +86,14 @@ function headerAndFooter() {
       const calc = window.innerHeight - $footer.offsetHeight;
       if ($header && $header.offsetHeight >= calc) {
         $pageContent.style.minHeight = $header.offsetHeight + 'px';
+        if ($fullHeight) {
+          $fullHeight.style.minHeight = $header.offsetHeight + 'px';
+        }
       } else {
         $pageContent.style.minHeight = calc + 'px';
+        if ($fullHeight) {
+          $fullHeight.style.minHeight = calc + 'px';
+        }
       }
     }
   }

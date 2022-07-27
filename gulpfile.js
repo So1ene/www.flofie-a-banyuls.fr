@@ -28,6 +28,9 @@ gulp.task('Watch Files', function() {
   browsersync.init({
     server: {
       baseDir: './dist/',
+      serveStaticOptions: {
+        extensions: ['html']
+      }
     }
   });
   gulp.watch([

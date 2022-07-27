@@ -136,18 +136,20 @@
 }
 
 .polaroid {
-  background-image: url("/assets/images/sable.jpg");
+  background-image: url("/assets/images/test/sable-1.jpg");
   padding: 32px;
   padding-bottom: 0;
   padding-top: 0;
   border-top: 5px solid white;
   box-shadow: inset 0 8px 4px -4px rgba(0, 0, 0, 0.2);
   background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
+  background-position: top -200px left;
 
-  @supports (background-image: -webkit-image-set(url("/assets/images/sable.webp") 1x)) {
-    background-image: url("/assets/images/sable.webp");
-  }
+  // @supports (background-image: -webkit-image-set(url("/assets/images/sable.webp") 1x)) {
+  //   background-image: url("/assets/images/sable.webp");
+  // }
 
   &__card {
     position: relative;
@@ -217,7 +219,7 @@
       display: flex;
       flex-direction: column;
       font-size: 16px;
-      background-color: rgba(247, 243, 236, 0.6);
+      background-color: rgba(247, 243, 236, 0.9);
       box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, 0.7);
       border-radius: 0 0 16px 16px;
       position: relative;
